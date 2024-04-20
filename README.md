@@ -26,16 +26,49 @@ Logic Diagram :
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-5/assets/6987778/34ec5d63-2b3b-4511-81ef-99f4572d5869)
 
-
 VERILOG CODE:
 
-----Type Verilog Code
+```
+module fsm(clk, rst, x, z);
+input clk, rst, x;
+output z;
+reg [2:1] present_state, NEXT_STATE;
+parameter S0=2'b00, S1=2'b01, S2=2'b10, S3=2'b11;
+always@(x,present_state)
+case(present_state)
+S0: if(x)
+NEXT_STATE=S1;
+else
+NEXT_STATE=S0;
+S1: if(x)
+NEXT_STATE=S1;
+else
+NEXT_STATE=S2;
+S2: if(x)
+NEXT_STATE=S3;
+else
+NEXT_STATE=S0;
+S3: if(x)
+NEXT_STATE=S1;
+else
+NEXT_STATE=S2;
+endcase
+always@(negedge rst, posedge clk)
+if(rst)
+present_state<=S0;
+else
+present_state<=NEXT_STATE;
+assign z=(present_state==S3);
+endmodule
+```
 
 OUTPUT:
 
------Place a Waveform Generated from Xilinx ISE------------
+![324165583-db5841b7-ada0-451e-bd35-af0dab6005b2](https://github.com/naveenkumar0404/VLSI-LAB-EXP-05/assets/127510390/860d60ee-ce28-49fb-a00f-7790225f6b84)
 
 RESULT:
+
+Thus,the simulation and synthesis of finite state machine by using vivado has been successfully excecuted and verified.
 
 
 
