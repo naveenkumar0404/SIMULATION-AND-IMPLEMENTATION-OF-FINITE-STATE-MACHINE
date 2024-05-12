@@ -1,14 +1,11 @@
-# VLSI-LAB-EXP-5
+
 SIMULATION AND IMPLEMENTATION OF FINITE STATE MACHINE
 
 AIM: To simulate and synthesis finite state machine using Xilinx ISE.
 
-**APPARATUS REQUIRED: **
+APPARATUS REQUIRED: VIVADO
 
-Xilinx 14.7 
-Spartan6 FPGA
-
-**PROCEDURE: **
+PROCEDURE: 
 STEP:1 Start the Xilinx navigator, Select and Name the New project.
 STEP:2 Select the device family, device, package and speed. 
 STEP:3 Select new source in the New Project and select Verilog Module as the Source type. 
